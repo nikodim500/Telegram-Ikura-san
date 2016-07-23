@@ -1,1 +1,1 @@
-web: python ikura-san.py
+web: python ikura-san.py ${PORT}

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 import telebot
 
@@ -18,3 +17,6 @@ def response_text(message):
 
 if __name__ == '__main__':
      bot.polling(none_stop=True)
+
+
+
