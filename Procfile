@@ -1,1 +1,1 @@
-web: python ikurasan.py ${PORT}
+web: python ikurasan.py
