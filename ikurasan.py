@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import telebot
-import os
-from flask import Flask
+#import os
+#from flask import Flask
 
-app = Flask(__name__)
+#app = Flask(__name__)
 token = '225635767:AAGEvQKd4Cj8wNN24wM5hpd8FlgiJPmky0A'
 
 bot = telebot.TeleBot(token)
@@ -19,15 +19,10 @@ def response_text(message):
     else:
         bot.send_message(message.chat.id, message.text)
 
-if int(os.environ.get("PAUSE", 0)) == 1:
-    inp = input("Paused. Press a key to cintinue ...")
-
 if __name__ == '__main__':
-    print("main")
     bot.polling(none_stop=True)
-    print("after polling")
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+#    port = int(os.environ.get("PORT", 5000))
+#    app.run(host='0.0.0.0', port=port)
 
 
 
