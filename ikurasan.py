@@ -19,10 +19,13 @@ def response_text(message):
     else:
         bot.send_message(message.chat.id, message.text)
 
-
-#bot.polling(none_stop=True)
+if int(os.environ.get("PAUSE", 0)) == 1:
+    inp = input("Paused. Press a key to cintinue ...")
 
 if __name__ == '__main__':
+    print("main")
+    bot.polling(none_stop=True)
+    print("after polling")
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
 
