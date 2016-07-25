@@ -20,7 +20,7 @@ def response_text(message):
         bot.send_message(message.chat.id, message.text)
 
 
-bot.polling(none_stop=True)
+#bot.polling(none_stop=True)
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
