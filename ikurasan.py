@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 import telebot
+import os
+from flask import Flask
 
+app = Flask(__name__)
 token = '225635767:AAGEvQKd4Cj8wNN24wM5hpd8FlgiJPmky0A'
 
 bot = telebot.TeleBot(token)
@@ -17,7 +20,11 @@ def response_text(message):
         bot.send_message(message.chat.id, message.text)
 
 if __name__ == '__main__':
-     bot.polling(none_stop=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+    bot.polling(none_stop=True)
+
+
 
 
 
