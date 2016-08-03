@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # Bot Talker Data file.
 talkz = [
