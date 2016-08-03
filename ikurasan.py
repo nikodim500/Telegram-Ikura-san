@@ -93,7 +93,7 @@ def command_text_ikura(message):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("икура")
     bot.send_message(message.chat.id, "Ну чево тебе?")
-    i = random.randrange(len(talkzload.talkz))
+    i = 7 #random.randrange(len(talkzload.talkz))
     print(i)
     r = talkzload.talkz[i]
     print(r)
