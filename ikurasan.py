@@ -89,10 +89,10 @@ def start(message):
     bot.reply_to(message, 'Talkz reloaded')
 
 @bot.message_handler(func=lambda message: message.text == u"икура")
-def command_text_ikura(m):
+def command_text_ikura(message):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("икура")
-    bot.send_message(m.chat.id, "Ну чево тебе? " + str(talkzload.talkz[random.randrange(len(talkzload.talkz))]))
+    bot.send_message(message.chat.id, "Ну чево тебе? " + str(talkzload.talkz[random.randrange(len(talkzload.talkz))]))
 
 @bot.message_handler(func=lambda message: message.text == "ikura")
 def command_text_ikuraeng(m):
