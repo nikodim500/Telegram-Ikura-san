@@ -1,2 +1,1 @@
-
 web: python ikurasan.py
