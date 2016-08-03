@@ -5,7 +5,7 @@
 import telebot
 import os
 import psycopg2
-import urllib.parse
+import urllib
 import talkzload
 
 from flask import Flask, request
