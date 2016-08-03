@@ -91,11 +91,13 @@ def start(message):
 @bot.message_handler(func=lambda message: message.text == u"икура")
 def command_text_ikura(m):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
+    print("икура")
     bot.send_message(m.chat.id, "Ну чево тебе? " + talkzload.talkz[random.randrange(len(talkzload.talkz))])
 
 @bot.message_handler(func=lambda message: message.text == "ikura")
-def command_text_ikura(m):
+def command_text_ikuraeng(m):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
+    print("ikura")
     bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
