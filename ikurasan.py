@@ -6,7 +6,11 @@ print (sys.version)
 import telebot
 import os
 import psycopg2
-from urllib.parse import urlparse
+try:
+    import urllib.parse
+except:
+    import urlparse
+
 import talkzload
 
 from flask import Flask, request
