@@ -5,7 +5,7 @@
 import telebot
 import os
 import psycopg2
-import urllib.parse
+from urllib import parse
 import talkzload
 
 from flask import Flask, request
@@ -16,7 +16,8 @@ server = Flask(__name__)
 
 
 #urllib.uses_netloc.append("postgres")
-url = urllib.parse.urlparse(os.environ["DATABASE_URL"])
+print(os.environ["DATABASE_URL"])
+url = parse.urlparse(os.environ["DATABASE_URL"])
 print(url)
 
 def db_init():
