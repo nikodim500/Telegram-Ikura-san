@@ -16,7 +16,7 @@ def start(message):
 
 @bot.message_handler(func=lambda message: message.text == u"икура")
 def command_text_ikura(m):
-    bot.send_message(m.chat.id, "Ну чево тебе?")
+    bot.send_message(m.chat.id, "Ну чево тебе? " + str(m.chat.id))
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
