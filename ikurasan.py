@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 #
 import sys
-print (sys.version) 
+
+print (sys.version)
 
 import telebot
 import os
