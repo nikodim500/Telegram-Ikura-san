@@ -93,7 +93,9 @@ def command_text_ikura(message):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("икура")
     bot.send_message(message.chat.id, "Ну чево тебе?")
-    bot.send_message(message.chat.id, str(talkzload.talkz[random.randrange(len(talkzload.talkz))]))
+    r = talkzload.talkz[random.randrange(len(talkzload.talkz))]
+    print (r)
+    bot.send_message(message.chat.id, r.encode('utf-8'))
 
 @bot.message_handler(func=lambda message: message.text == "ikura")
 def command_text_ikuraeng(m):
