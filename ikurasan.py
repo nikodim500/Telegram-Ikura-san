@@ -14,7 +14,7 @@ server = Flask(__name__)
 def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
 
-@bot.message_handler(func=lambda message: message.text == "икура")
+@bot.message_handler(func=lambda message: message.text == u"икура")
 def command_text_ikura(m):
     bot.send_message(m.chat.id, "Ну чево тебе?")
 
