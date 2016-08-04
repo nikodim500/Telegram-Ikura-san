@@ -118,7 +118,11 @@ def command_text_ikura(message):
 def command_text_ikuraeng(m):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("ikura")
-    bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
+    try:
+        bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
+    except Exception as e:
+        print(e)
+
 
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
