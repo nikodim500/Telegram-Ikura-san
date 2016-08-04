@@ -83,6 +83,7 @@ server = Flask(__name__)
 
 @bot.inline_handler(lambda query: query.query == 'text')
 def query_text(inline_query):
+    print("inline")
     try:
         r = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
         r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
