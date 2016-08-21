@@ -132,13 +132,13 @@ def command_text_ikuraeng(m):
         print(e)
 
 
-# @bot.message_handler(func=lambda message: True, content_types=['text'])
-# def echo_message(message):
-#     for s in talkzload.talkz:
-#         if message.text in s:
-#             print(s)
-#     bot.send_message(message.chat.id, "\n".join(s for s in talkzload.talkz if message.text in s))
-#     #bot.reply_to(message, message.text)
+@bot.message_handler(func=lambda message: True, content_types=['text'])
+def echo_message(message):
+     for s in talkzload.talkz:
+         if message.text in s:
+             print(s)
+     bot.send_message(message.chat.id, "\n".join(s for s in talkzload.talkz if message.text in s))
+     #bot.reply_to(message, message.text)
 
 
 @server.route("/bot", methods=['POST'])
