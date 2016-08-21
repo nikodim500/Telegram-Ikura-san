@@ -92,6 +92,8 @@ def select_talkz(txt):
                 if c == 50:
                     break
         #print(res)
+    if res == []:
+        res = [types.InlineQueryResultArticle('1', 'низуя не ношол', '')]
     return res
 
 
