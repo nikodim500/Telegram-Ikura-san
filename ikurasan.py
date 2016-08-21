@@ -81,15 +81,20 @@ server = Flask(__name__)
 
 #talkz = readdb()
 
+def select_talkz(txt):
+    res = []
+    for s in talkzload.talkz:
+        if txt in s:
+            res = res + [s]
+    return res
+
 
 #@bot.inline_handler(lambda query: query.query == 'text')
 @bot.inline_handler(func=lambda query: True)
 def query_text(inline_query):
     print("inline")
     try:
-        r = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
-        r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
-        bot.answer_inline_query(inline_query.id, [r, r2])
+        bot.answer_inline_query(inline_query.id, select_talkz(inline_query.query))
     except Exception as e:
         print(e)
 
@@ -108,13 +113,13 @@ def command_text_ikura(message):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("икура")
     bot.send_message(message.chat.id, "Ну чево тебе?")
-    l = len(talkzload.talkz)
-    print("l = " + str(l))
-    #i = random.randint(0, l)
-    #print(i)
-    r = random.choice(talkzload.talkz)#talkzload.talkz[i]
-    print(r)
-    bot.send_message(message.chat.id, r)
+    # l = len(talkzload.talkz)
+    # print("l = " + str(l))
+    # #i = random.randint(0, l)
+    # #print(i)
+    # r = random.choice(talkzload.talkz)#talkzload.talkz[i]
+    # print(r)
+    # bot.send_message(message.chat.id, r)
 
 @bot.message_handler(func=lambda message: message.text == "ikura")
 def command_text_ikuraeng(m):
