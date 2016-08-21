@@ -91,14 +91,14 @@ def select_talkz(txt):
                 res = res + [types.InlineQueryResultArticle(str(c), s, types.InputTextMessageContent(s))]
                 if c == 50:
                     break
-        print(res)
+        #print(res)
     return res
 
 
 #@bot.inline_handler(lambda query: query.query == 'text')
 @bot.inline_handler(func=lambda query: True)
 def query_text(inline_query):
-    print("q: " + inline_query.query)
+    #print("q: " + inline_query.query)
     try:
         talkz_result = select_talkz(inline_query.query)
         if talkz_result != []:
@@ -109,12 +109,12 @@ def query_text(inline_query):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
+    bot.reply_to(message, 'Здрасьте, ' + message.from_user.first_name)
 
-@bot.message_handler(commands=['reload'])
-def start(message):
-#    writedb(talkzload.talkz)
-    bot.reply_to(message, 'Talkz reloaded')
+# @bot.message_handler(commands=['reload'])
+# def start(message):
+# #    writedb(talkzload.talkz)
+#     bot.reply_to(message, 'Talkz reloaded')
 
 @bot.message_handler(func=lambda message: message.text == u"икура")
 def command_text_ikura(message):
@@ -138,13 +138,13 @@ def command_text_ikuraeng(m):
         print(e)
 
 
-@bot.message_handler(func=lambda message: True, content_types=['text'])
-def echo_message(message):
-     for s in talkzload.talkz:
-         if message.text in s:
-             print(s)
-     bot.send_message(message.chat.id, "\n".join(s for s in talkzload.talkz if message.text in s))
-     #bot.reply_to(message, message.text)
+# @bot.message_handler(func=lambda message: True, content_types=['text'])
+# def echo_message(message):
+#      for s in talkzload.talkz:
+#          if message.text in s:
+#              print(s)
+#      bot.send_message(message.chat.id, "\n".join(s for s in talkzload.talkz if message.text in s))
+#      #bot.reply_to(message, message.text)
 
 
 @server.route("/bot", methods=['POST'])
