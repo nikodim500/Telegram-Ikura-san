@@ -83,9 +83,11 @@ server = Flask(__name__)
 
 def select_talkz(txt):
     res = []
+    c = 0
     for s in talkzload.talkz:
         if txt in s:
-            res = res + [types.InlineQueryResultArticle('1', s, types.InputTextMessageContent(s))]
+            c =+ 1
+            res = res + [types.InlineQueryResultArticle(c, s, types.InputTextMessageContent(s))]
     print(res)
     return res
 
