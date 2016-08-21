@@ -87,7 +87,7 @@ def select_talkz(txt):
     for s in talkzload.talkz:
         if txt in s:
             c =+ 1
-            res = res + [types.InlineQueryResultArticle(c, s, types.InputTextMessageContent(s))]
+            res = res + [types.InlineQueryResultArticle(str(c), s, types.InputTextMessageContent(s))]
     print(res)
     return res
 
