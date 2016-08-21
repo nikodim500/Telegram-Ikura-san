@@ -82,13 +82,15 @@ server = Flask(__name__)
 #talkz = readdb()
 
 def select_talkz(txt):
+    res = []
     if len(txt) > 3:
-        res = []
         c = 0
         for s in talkzload.talkz:
             if txt in s:
                 c += 1
                 res = res + [types.InlineQueryResultArticle(str(c), s, types.InputTextMessageContent(s))]
+                if c == 50:
+                    break
         print(res)
     return res
 
@@ -98,9 +100,9 @@ def select_talkz(txt):
 def query_text(inline_query):
     print("q: " + inline_query.query)
     try:
-        result = select_talkz(inline_query.query)
-        if result != []:
-            bot.answer_inline_query(inline_query.id, result)
+        talkz_result = select_talkz(inline_query.query)
+        if talkz_result != []:
+            bot.answer_inline_query(inline_query.id, talkz_result)
     except Exception as e:
         print(e)
 
