@@ -86,13 +86,14 @@ def select_talkz(txt):
     for s in talkzload.talkz:
         if txt in s:
             res = res + [s]
+    print(res)
     return res
 
 
 #@bot.inline_handler(lambda query: query.query == 'text')
 @bot.inline_handler(func=lambda query: True)
 def query_text(inline_query):
-    print("inline")
+    print("q: " + inline_query.query)
     try:
         bot.answer_inline_query(inline_query.id, select_talkz(inline_query.query))
     except Exception as e:
