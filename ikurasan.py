@@ -119,7 +119,7 @@ def command_text_ikuraeng(m):
     #bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
     print("ikura")
     try:
-        bot.send_message(m.chat.id, talkzload.talkz[random.randrange(len(talkzload.talkz))])
+        bot.send_message(m.chat.id, talkzload.talkz[random.randint(1, len(talkzload.talkz))])
     except Exception as e:
         print(e)
 
