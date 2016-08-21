@@ -95,7 +95,8 @@ def select_talkz(txt):
 def query_text(inline_query):
     print("q: " + inline_query.query)
     try:
-        bot.answer_inline_query(inline_query.id, select_talkz(inline_query.query))
+        pass
+        #bot.answer_inline_query(inline_query.id, select_talkz(inline_query.query))
     except Exception as e:
         print(e)
 
