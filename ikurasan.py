@@ -93,7 +93,7 @@ def select_talkz(txt):
                     break
         #print(res)
     if res == []:
-        res = [types.InlineQueryResultArticle('1', 'низуя не ношол', '')]
+        res = [types.InlineQueryResultArticle('1', 'низуя не ношол', types.InputTextMessageContent(''))]
     return res
 
 
